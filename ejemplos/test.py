@@ -1,0 +1,1 @@
+print("test{1}{0}".format("hola","chau"))
