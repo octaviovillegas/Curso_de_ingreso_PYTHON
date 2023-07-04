@@ -28,7 +28,7 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        """"hola a todos"""
+        """"hola a todos ESPERO NOS VAYA BIEN"""
         pass
         
 
