@@ -26,23 +26,24 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
+
+
 class App(customtkinter.CTk):
-    
+
     def __init__(self):
         super().__init__()
 
         # configure window
         self.title("UTN Fra")
 
-        self.btn_validar = customtkinter.CTkButton(master=self, text="Validar", command=self.btn_validar_on_click)
+        self.btn_validar = customtkinter.CTkButton(
+            master=self, text="Validar", command=self.btn_validar_on_click)
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
-
     def btn_validar_on_click(self):
-        print("lalal")
-        
-        
-    
+        pass
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

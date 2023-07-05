@@ -38,35 +38,7 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        marca = self.combobox_marca.get()
-        cantidad = int(self.combobox_cantidad.get())
-        total_sin_desceunto = 800 * cantidad
-        if(cantidad >= 6):
-            total_con_desceunto = total_sin_desceunto * 0.5
-        elif(cantidad == 5):
-            if(marca == "ArgentinaLuz"):
-                total_con_desceunto = total_sin_desceunto * 0.6
-            else:
-                total_con_desceunto = total_sin_desceunto * 0.7
-        elif(cantidad == 4):
-            if(marca == "ArgentinaLuz" or marca == "FelipeLamparas" ):
-                total_con_desceunto = total_sin_desceunto * 0.75
-            else:
-                total_con_desceunto = total_sin_desceunto * 0.80
-        elif(cantidad == 3):
-            if(marca == "ArgentinaLuz"):
-                total_con_desceunto = total_sin_desceunto * 0.85
-            elif(marca == "FelipeLamparas" ):
-                total_con_desceunto = total_sin_desceunto * 0.90
-            else:
-                total_con_desceunto = total_sin_desceunto * 0.95
-        else:
-            total_con_desceunto = total_sin_desceunto
-        if(total_con_desceunto > 4000):
-            total_con_desceunto = total_sin_desceunto * 0.95
-
-        
-        alert(title="Alert", message="El valor final con descuento es: " + str(total_con_desceunto))
+        pass
         
     
 if __name__ == "__main__":

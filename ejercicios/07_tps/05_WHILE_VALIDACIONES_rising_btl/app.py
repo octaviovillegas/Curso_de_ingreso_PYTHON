@@ -15,8 +15,9 @@ Los datos requeridos son los siguientes:
     Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 '''
 
+
 class App(customtkinter.CTk):
-    
+
     def __init__(self):
         super().__init__()
 
@@ -35,29 +36,23 @@ class App(customtkinter.CTk):
 
         self.label2 = customtkinter.CTkLabel(master=self, text="Estado")
         self.label2.grid(row=2, column=0, padx=20, pady=10)
-        self.combobox_tipo = customtkinter.CTkComboBox(master=self, values=["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"])
+        self.combobox_tipo = customtkinter.CTkComboBox(
+            master=self, values=["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"])
         self.combobox_tipo.grid(row=2, column=1, padx=20, pady=10)
 
         self.label3 = customtkinter.CTkLabel(master=self, text="Legajo")
         self.label3.grid(row=3, column=0, padx=20, pady=10)
         self.txt_legajo = customtkinter.CTkEntry(master=self)
         self.txt_legajo.grid(row=3, column=1)
-                
-        self.btn_validar = customtkinter.CTkButton(master=self, text="Validar", command=self.btn_validar_on_click)
+
+        self.btn_validar = customtkinter.CTkButton(
+            master=self, text="Validar", command=self.btn_validar_on_click)
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
-
     def btn_validar_on_click(self):
-        apellido = self.txt_apellido.get()
-        edad = self.txt_edad.get()
-        tipo = self.combobox_tipo.get()
-        legajo = self.txt_legajo.get()
-        
-        alert(title="Alert", message="\nNombre " + str(apellido) + " \nEdad " + str(edad) + "\nEstado Civil " + str(tipo) + "\nLegajo " + str(legajo))
+        pass
 
-        
-        
-    
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
