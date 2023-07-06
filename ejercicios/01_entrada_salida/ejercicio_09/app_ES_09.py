@@ -40,7 +40,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero = int(self.txt_sueldo.get())
+        alert("lalal", numero)
         
     
 if __name__ == "__main__":
