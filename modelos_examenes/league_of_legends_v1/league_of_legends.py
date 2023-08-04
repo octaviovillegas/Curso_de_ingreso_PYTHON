@@ -23,21 +23,21 @@ import warnings
 
 '''
 ################# INTRODUCCION #################
-#? El presentador del torneo de artes marciales quiere que desarrolles un modelo prototipico 
-#? de scouter (un detector basicamente) para ver ciertas metricas de los participantes.
-#? de cualquier parte del universo, es por eso que deberas realizar la carga 
-#? de 10 participantes.
+#? Un jugador de League of Legends tiene un fin de semana libre y 
+#? va a jugar partidas hasta que se canse.
 '''
 NOMBRE = '' # Completa tu nombre completo solo en esa variable
 '''
 #?################ ENUNCIADO #################
-Para ello deberas programar el boton "Cargar Participantes" para poder cargar 10 luchadoras/es.
-Los datos que deberas pedir para los luchadoras/es son:
-    * El nombre del luchador/a.
-    * El tipo de raza (Terricola , Namekiano, Alienigena , Saiyajin).
-    * La cantidad de poder del participante (entre 100 y 5000).
+Para ello deberas programar el boton "Cargar Campeones" para poder cargar 10 personajes del juego.
+Para mejorar su jugabilidad, por cada partida jugada va a registrar:
+    * Modo de juego ("Normal", "Clasificatoria", "ARAM")
+    * Nombre del personaje que usó
+    * La cantidad de asesinatos a favor (No puede ser negativo)
+    * Muertes en contra (No puede ser negativo)
+    * Asistencias a favor. (No puede ser negativo, hasta 40)
     
-B)  Al presionar el boton "Mostrar Informe 1" se deberan listar los participantes
+B)  Al presionar el boton "Mostrar Informe 1" se deberan listar los Campeones
         y su posicion en la lista (por terminal), 
         adicionalmente mostrar el informe del punto C.
 
@@ -51,16 +51,16 @@ Para determinar que informe hacer, tenga en cuenta lo siguiente:
 
 EL RESTO DE LOS INFORMES LOS PUEDE IGNORAR. 
 C) Al presionar el boton "Mostrar Informe 2"
-    #! 0) - Cantidad de luchadores Terricolas.
-    #! 1) - Cantidad de luchadores Alienigenas.
-    #! 2) - Nombre, Raza y Poder del luchador mas fuerte.
-    #! 3) - Nombre, Raza y Poder del luchador mas debil.
-    #! 4) - Cantidad de luchadores con mas de 2500 de poder.
-    #! 5) - Cantidad de luchadores con menos de 2500 de poder.
-    #! 6) - Raza que mas luchadores posea inscriptos.
-    #! 7) - Raza que menos luchadores posea inscriptos.
-    #! 8) - el promedio de poder de todos los luchadores inscriptos.
-    #! 9) - el promedio de poder de todos los luchadores Saiyajines.
+    #! 0) - El modo de juego más jugado.
+    #! 1) - El modo de juego menos jugado.
+    #! 2) - El personaje con el cual murió más.
+    #! 3) - El personaje con el cual asistio más.
+    #! 4) - El promedio de asesinatos a favor en modo Clasificatoria.
+    #! 5) - El promedio de muertes en contra en modo ARAM.
+    #! 6) - El promedio de asistencias en modo Normal.
+    #! 7) - De la partida con mas muertes en contra, el nombre del personaje y el modo de juego.
+    #! 8) - De la partida con mas asistencias a favor, el nombre del personaje y el modo de juego.
+    #! 9) - De la partida con mas asesinatos a favor, el nombre del personaje y el modo de juego.
 '''
 
 class App(customtkinter.CTk):
@@ -68,17 +68,17 @@ class App(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         
-        self.title(f"UTN FRA - Scouter de {NOMBRE}")
+        self.title(f"UTN FRA - League of {NOMBRE}")
         self.minsize(320, 250)
 
-        self.label_title = customtkinter.CTkLabel(master=self, text=f"Scouter de {NOMBRE}", font=("Arial", 20, "bold"))
+        self.label_title = customtkinter.CTkLabel(master=self, text=f"League of {NOMBRE}", font=("Arial", 20, "bold"))
         self.label_title.grid(row=0, column=0, columnspan=2, padx=20, pady=10)
         
-        self.image = tk.PhotoImage(file='./modelos_examenes/scouter_v1/UTN_Scouter_App_v1.png')
+        self.image = tk.PhotoImage(file='./modelos_examenes/league_of_legends_v1/UTN_LoL_App_v1.png')
         self.top_banner = customtkinter.CTkLabel(master = self, image = self.image, text = '')
         self.top_banner.grid_configure(row = 1, column = 0, padx = 20, pady = 5, columnspan = 2, rowspan = 1, sticky = 'we')
 
-        self.btn_cargar = customtkinter.CTkButton(master=self, text="Cargar Participantes", command=self.btn_cargar_participantes_on_click)
+        self.btn_cargar = customtkinter.CTkButton(master=self, text="Cargar Campeones", command=self.btn_cargar_campeones_on_click)
         self.btn_cargar.grid(row=2, pady=10, columnspan=2, sticky="nsew")
 
         self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar Informe 1", command=self.btn_mostrar_informe_1_on_click)
@@ -92,20 +92,28 @@ class App(customtkinter.CTk):
 
         # Datos de prueba para el boton mostrar
         # Cargar aca los pokemones
-        self.lista_nombre_participantes = [
-            "Vegeta", "Goku", "Yamcha", "Pikoro", "Gohan",
-            "Frieza", "Appule", "Krilin", "Roshi", "Dende"
+        self.lista_nombre_campeones = [
+            "Jinx", "Akali", "Ashe", "Vladimir", "Kalista",
+            "Teemo", "Annie", "Zed", "Katarina", "Hecarim"
         ]
-        self.lista_raza_participantes = [
-            "Saiyajin", "Saiyajin", "Terricola", "Namekiano", "Saiyajin",
-            "Alienigena", "Alienigena", "Terricola", "Terricola", "Namekiano",
+        self.lista_asesinatos_a_favor = [
+            9, 7, 7, 4, 12, 20, 5, 7, 14, 15
         ]
-        self.lista_poder_participantes = [
-            4900, 4800, 200, 4500, 3500, 5000, 600, 550, 450, 610
+        self.lista_asistencias_a_favor = [
+            4, 5, 9, 1, 0, 2, 10, 8, 5, 9
+        ]
+
+        self.lista_muertes_en_contra = [
+            6, 8, 9, 3, 2, 1, 4, 5, 9, 2
+        ]
+
+        self.lista_modo_de_juego = [
+            "ARAM", "ARAM", "Clasificatoria", "Normal", "Clasificatoria",
+            "Clasificatoria", "ARAM", "Clasificatoria", "Normal", "Clasificatoria",
         ]
 
 
-    def btn_cargar_participantes_on_click(self):
+    def btn_cargar_campeones_on_click(self):
         pass
         
 

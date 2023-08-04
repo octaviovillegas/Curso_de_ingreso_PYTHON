@@ -100,14 +100,16 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_informe_1(self):
         pass
+        
 
 
     def btn_mostrar_informe_2(self):
         pass
+        
 
 
     def btn_mostrar_informe_3(self):
-        pass
+        pass      
 
 
     def btn_mostrar_todos_on_click(self):
