@@ -31,9 +31,7 @@
 * Cada tema tiene en los enunciados el objetivo que se deben cumplir.
 
 -----
-
-  ### Videos de las clases
-
+<br><br><br>
 
 <table align='center'>
     <theader>
