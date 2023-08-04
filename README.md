@@ -1,14 +1,19 @@
-# **curso-ingreso-py**
------
-Curso de ingreso con PYTHON
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src='https://github.com/caidevOficial/Logos/blob/master/Instituciones/utn_logo_ingreso.gif?raw=true' width='800'>
+      <td>
+    </tr>
+  </tbody>
+</table>
 
-ejercitación y TP para rendir el examen de ingreso 
-# **UTNFRA**
-## **Técnico superior en programación**
+## Curso de ingreso con Python
+
+### Ejercitación y Trabajos Pr&aacute;cticos para rendir el examen de ingreso.
+## **Carrera: T&eacute;cnico superior en programación**
 
 [Sitio WEB de GitHub](http://www.sistemas-utnfra.com.ar/files/apunte-ingreso/Introduccion_Programacion_PY.pdf)
-
-
 
 
 -----
@@ -43,9 +48,9 @@ ejercitación y TP para rendir el examen de ingreso
   
 * Ejercicio TP4 resuelto con match https://youtu.be/xm5T3eSZSS4
   
-* Ejercicio completo paso a paso (TP5) https://youtu.be/-Ph6v_3nzvI
+* Ejercicio completo paso a paso (Adivina el numero [bis]) https://youtu.be/-Ph6v_3nzvI
 
-* Mejora TP5 e introducción manejo del tiempo https://youtu.be/-u2k8Llgl_s
+* Mejora Adivina el numero [bis] e introducción manejo del tiempo https://youtu.be/-u2k8Llgl_s
 
 * Bucles while y for https://youtu.be/57kuDSoSAW8
 
@@ -59,6 +64,40 @@ ejercitación y TP para rendir el examen de ingreso
 
 * Examen de ingreso 2023 - Parte 2  https://www.youtube.com/watch?v=5Dc2_TRooks
 
-**El codigo y los videos fueron realizados por:**
-* :muscle:Mauricio Davila .[github: Mauricio Davila](https://github.com/davilamr)
-* :muscle:Eriquez Joaquin .[github: Eriquez Joaquin](https://github.com/joaquinenriquez)
+<table align='center'>
+  <theader>
+    <h2 align='center'>Colaboradores: 🌎</h2>
+  </theader>
+  <tbody>
+    <tr align='center'>
+      <td>
+        🦸🏻‍♂️ Mauricio Davila
+      <td/>
+      <td>
+        <a href="https://github.com/davilamr/">
+          <img alt="GitHub" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=yellow" width="125px" height="30px" />
+        </a>
+      </td>
+    </tr>
+    <tr align='center'>
+      <td>
+        🦹🏼 Joaquin Enriquez
+      <td/>
+      <td>
+        <a href="https://github.com/joaquinenriquez/">
+          <img alt="GitHub" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" width="125px" height="30px" />
+        </a>
+      </td>
+    </tr>
+    <tr align='center'>
+      <td>
+        🦹🏻Facundo Falcone
+      <td/>
+      <td>
+        <a href="https://github.com/caidevOficial/">
+          <img alt="GitHub" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=blue" width="125px" height="30px" />
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
