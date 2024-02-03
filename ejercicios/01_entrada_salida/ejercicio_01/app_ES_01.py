@@ -6,7 +6,7 @@ import customtkinter
 
 
 '''
-nombre: Jose Emiliano
+nombre: José Emiliano
 apellido: Solis
 ---
 Ejercicio: entrada_salida_01
