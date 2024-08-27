@@ -74,7 +74,7 @@ class App(customtkinter.CTk):
         self.label_title = customtkinter.CTkLabel(master=self, text=f"Scouter de {NOMBRE}", font=("Arial", 20, "bold"))
         self.label_title.grid(row=0, column=0, columnspan=2, padx=20, pady=10)
         
-        self.image = tk.PhotoImage(file='./modelos_examenes/scouter_v1/UTN_Scouter_App_v1.png')
+        self.image = tk.PhotoImage(file='./02-modelos_examenes/scouter_v1/UTN_Scouter_App_v1.png')
         self.top_banner = customtkinter.CTkLabel(master = self, image = self.image, text = '')
         self.top_banner.grid_configure(row = 1, column = 0, padx = 20, pady = 5, columnspan = 2, rowspan = 1, sticky = 'we')
 
